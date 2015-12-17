@@ -25,6 +25,10 @@
 	<select id="getDebate" resultType="com.wsq.webprj.vo.DebateSquare">
 		SELECT * FROM DEBATESQUARE WHERE CODE = #{code}
 	</select>
+	
+	<select id="getDebateFirst" resultType="com.wsq.webprj.vo.DebateSquare">
+		SELECT * FROM DEBATESQUARE WHERE CODE = #{code}
+	</select>
 
 </mapper>
 

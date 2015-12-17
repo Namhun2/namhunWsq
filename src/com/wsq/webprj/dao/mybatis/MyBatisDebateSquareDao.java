@@ -75,4 +75,15 @@ public class MyBatisDebateSquareDao implements DebateSquareDao{
 		return notice;
 	}
 
+	@Override
+	public DebateSquare getDebateFirst() {
+		SqlSession session = ssf.openSession();
+		DebateSquareDao dao = session.getMapper(DebateSquareDao.class); // mapper按眉 积己
+		DebateSquare notice = dao.getDebateFirst();
+
+		//sqlSession.close(); // 技记 辆丰.
+
+		return notice;
+	}
+
 }

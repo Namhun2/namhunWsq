@@ -8,6 +8,7 @@ import com.wsq.webprj.vo.DebateSquare;
 public interface DebateSquareDao {
 	
 	public DebateSquare getDebate(String code);
+	public DebateSquare getDebateFirst();
 	
 	public List<DebateSquare> getDebateSquares() throws SQLException;
 	public List<DebateSquare> getDebateSquares(int page) throws SQLException;

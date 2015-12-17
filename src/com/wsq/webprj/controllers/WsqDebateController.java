@@ -30,8 +30,16 @@ public class WsqDebateController {
 	@RequestMapping("debate")
 	public String debate(String c, Model model)
 	{
-		DebateSquare debate = dao.getDebate(c);
-		model.addAttribute("debate", debate);
+		System.out.printf("\nc:%s", c);
+		
+		if(c==null){
+			DebateSquare debate = dao.getDebateFirst();
+			model.addAttribute("debate", debate);
+		}
+		else{
+			DebateSquare debate = dao.getDebate(c);
+			model.addAttribute("debate", debate);
+		}		
 		
 		return "wsqdebate/debate";		
 	}

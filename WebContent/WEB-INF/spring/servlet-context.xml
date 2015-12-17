@@ -14,7 +14,6 @@
 
 	<!-- context:기본설정, scan:어노테이션이 있는 패키지 경로 설정 -->
 	<context:component-scan base-package="com.newlec.webprj.controllers"></context:component-scan>
-
 	<!-- services -->
 
 
