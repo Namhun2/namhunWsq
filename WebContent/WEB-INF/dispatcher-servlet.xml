@@ -19,7 +19,7 @@
     <bean name="memberDao" class="com.wsq.webprj.dao.mybatis.MyBatisMemberDao"/>
     <bean name="profileDao" class="com.wsq.webprj.dao.mybatis.MyBatisMemberProfileDao"/>	
   	<bean name="debateSquareDao" class="com.wsq.webprj.dao.mybatis.MyBatisDebateSquareDao"/>
-    
+    <bean name="commentDao" class="com.wsq.webprj.dao.mybatis.MyBatisCommentDao"/>
     
     <!-- more bean definitions for services go here -->
 	<mvc:annotation-driven />

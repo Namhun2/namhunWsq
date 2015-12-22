@@ -14,6 +14,7 @@
 				<th>Title/ </th>
 				<th>Contents/ </th>
 				<th>Hit/</th>
+				<th>regDate</th>
 				
 			</tr>
 		<c:forEach var="n" items="${list}">
@@ -22,8 +23,8 @@
 				<td>${n.master_id}</td>
 				<td><a href="debate?c=${n.code}">${n.title}</a></td>
 				<td>${n.contents}</td>
-				<td>${n.hit}
-				<fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" /></td>
+				<td>${n.hit}</td>
+				<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}" /></td>
 			</tr>
 		</c:forEach>
 			

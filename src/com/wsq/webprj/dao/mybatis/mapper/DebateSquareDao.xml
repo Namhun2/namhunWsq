@@ -27,7 +27,7 @@
 	</select>
 	
 	<select id="getDebateFirst" resultType="com.wsq.webprj.vo.DebateSquare">
-		SELECT * FROM DEBATESQUARE WHERE CODE = #{code}
+		select * from DebateSquare where regdate=(SELECT top 1 regdate from DebateSquare order by Regdate desc)
 	</select>
 
 </mapper>

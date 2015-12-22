@@ -5,21 +5,26 @@
 <mapper namespace="com.wsq.webprj.dao.CommentDao">
 
 	<select id="getComments" resultType="com.wsq.webprj.vo.Comment">
-		SELECT * FROM(SELECT ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,
-		COMMENTS.*FROM COMMENTS WHERE ${param2} LIKE '%${param3}%') A
-		WHERE NUM BETWEEN 1+(#{param1}-1)*10 AND #{param1}*10
+		select * from comment where debateCode=#{code} order by regDate desc
 	</select>
 
 	<update id="update">
-		UPDATE COMMENTS SET NAME = #{name}, PWD = #{pwd}, REGDATE = #{regDate}  WHERE MID= #{mid}
+		UPDATE COMMENT SET NAME = #{name}, PWD = #{pwd}, REGDATE = #{regDate}  WHERE MID= #{mid}
 	</update>
 	
-	<delete id="delete">
-		DELETE COMMENTS WHERE MID= #{mid}
+	<delete id="delete" parameterType="String">
+		DELETE COMMENT WHERE CODE = #{code}
 	</delete>
 
-	<insert id="insert">
-		INSERT INTO COMMENTS(MID, PWD, NAME) VALUES(#{mid}, #{pwd}, #{name})
+	<!-- <insert id="insert">
+		INSERT INTO COMMENT(id, context, debateCode) VALUES(#{id}, #{context}, #{debateCode})
+	</insert> -->
+
+	<insert id="insert" parameterType="com.wsq.webprj.vo.Comment">
+		<selectKey keyProperty="code" order="BEFORE" resultType="String">
+			SELECT MAX(CAST(CODE AS INT)) CODE FROM COMMENT
+		</selectKey>	 
+		INSERT INTO COMMENT(code, id, context, debateCode, opinion) Values(#{code}+1,#{id},#{context},#{debateCode},#{opinion})
 	</insert>
 
 </mapper>

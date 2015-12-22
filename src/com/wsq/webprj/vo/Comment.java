@@ -1,42 +1,54 @@
 package com.wsq.webprj.vo;
 
+import java.util.Date;
+
 public class Comment {
-	private String member_mid;
-	private int debateSquare_code;
-	private String agree_disagree;
-	private String comment;
-	private int recommend;
+	private String id;
+	private String context;
+	private Date regDate;
+	private int debateCode;
+	private String code;
+	private boolean opinion;
+		
+		
 	
 	
-	public String getMember_mid() {
-		return member_mid;
+	
+	public boolean isOpinion() {
+		return opinion;
 	}
-	public void setMember_mid(String member_mid) {
-		this.member_mid = member_mid;
+	public void setOpinion(boolean opinion) {
+		this.opinion = opinion;
 	}
-	public int getDebateSquare_code() {
-		return debateSquare_code;
+	public String getCode() {
+		return code;
 	}
-	public void setDebateSquare_code(int debateSquare_code) {
-		this.debateSquare_code = debateSquare_code;
+	public void setCode(String code) {
+		this.code = code;
 	}
-	public String getAgree_disagree() {
-		return agree_disagree;
+	public String getId() {
+		return id;
 	}
-	public void setAgree_disagree(String agree_disagree) {
-		this.agree_disagree = agree_disagree;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getComment() {
-		return comment;
+	public String getContext() {
+		return context;
 	}
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setContext(String context) {
+		this.context = context;
 	}
-	public int getRecommend() {
-		return recommend;
+	public Date getRegDate() {
+		return regDate;
 	}
-	public void setRecommend(int recommend) {
-		this.recommend = recommend;
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
+	public int getDebateCode() {
+		return debateCode;
+	}
+	public void setDebateCode(int debateCode) {
+		this.debateCode = debateCode;
 	}
 	
 	
